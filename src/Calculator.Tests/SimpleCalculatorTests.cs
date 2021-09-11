@@ -31,7 +31,7 @@ namespace Calculator.Tests
         [Fact]
         public void Division_by_zero_throws()
         {
-            Assert.Throws<DivideByZeroException>(() => calculator.Divide(1));
+            Assert.Throws<DivideByZeroException>(() => calculator.Divide(0));
         }
 
         [Fact]
