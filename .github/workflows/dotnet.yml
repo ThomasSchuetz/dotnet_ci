@@ -31,5 +31,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: CoverateReport
-        path: ${{ github.workspace }}/CoverageReport
+        path: ${{ github.workspace }}/src/CoverageReport
         
