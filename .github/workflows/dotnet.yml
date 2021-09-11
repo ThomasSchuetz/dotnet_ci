@@ -7,8 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  ci_example:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -28,6 +27,9 @@ jobs:
         dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
         dotnet tool install -g dotnet-reportgenerator-globaltool
         reportgenerator -reports:./**/coverage.cobertura.xml -targetdir:./CoverageReport -reporttypes:Html
+        ls -la
+        cd CoverageReport
+        ls -la
     - name: Upload test coverage report
       uses: actions/upload-artifact@v2
       with:
