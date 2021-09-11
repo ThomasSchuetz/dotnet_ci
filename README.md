@@ -1,1 +1,1 @@
-# dotnet_ci
+# Example for using github actions for CI
