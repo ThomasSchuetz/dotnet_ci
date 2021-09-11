@@ -23,5 +23,14 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Test and create coverage report
+      run: |
+        dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
+        dotnet tool install -g dotnet-reportgenerator-globaltool
+        reportgenerator -reports:$pwd/**/coverage.cobertura.xml -targetdir:$pwd/CoverageReport -reporttypes:Html
+    - name: Upload test coverage report
+      uses: actions/upload-artifact@v2
+      with:
+        name: CoverateReport
+        path: CoverageReport/
+        
