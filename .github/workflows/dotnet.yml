@@ -34,5 +34,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: CoverateReport
-        path: $GITHUB_WORKSPACE/src/CoverageReport
+        path: /home/runner/work/dotnet_ci/dotnet_ci/src/CoverageReport
         
